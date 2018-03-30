@@ -5,7 +5,19 @@ using System.Threading.Tasks;
 
 namespace Womb.Models
 {
-    public class Class
+    public enum Class
     {
-    }
+        Barbarian,
+        Bard,
+        Cleric,
+        Druid,
+        Fighter,
+        Monk,
+        Paladin,
+        Ranger,
+        Rogue,
+        Sorcerer,
+        Warlock,
+        Wizard,
+    };
 }

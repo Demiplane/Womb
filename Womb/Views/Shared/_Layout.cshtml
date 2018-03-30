@@ -17,9 +17,8 @@
 <body>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Demiplane.io</p>
+        <footer class="card-footer">
+            <p>&copy; @Math.Max(2018, DateTime.Now.Year) - Demiplane.io</p>
         </footer>
     </div>
 

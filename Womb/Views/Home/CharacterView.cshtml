@@ -4,16 +4,36 @@
     ViewData["Title"] = "Character Creator";
 }
 
-<h1 class="display-1">@Model.Name</h1>
-<h1 class="display-2">@Model.Name</h1>
 <h1 class="display-3">@Model.Name</h1>
-<h1 class="display-4">@Model.Name</h1>
 
-<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-<hr class="my-4">
-<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-<p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</p>
+@if (String.IsNullOrWhiteSpace(Model.Subrace))
+{
+    <h3 class="text-primary">@Model.Race</h3>
+}
+else
+{
+    <h3 class="text-primary">@Model.Subrace @Model.Race</h3>
+}
 
+<h3 class="text-primary">@Model.Subclass @Model.Class</h3>
 
+<hr />
+
+<div class="container my-5">
+    <div class="row">
+        <p class="col-2 text-center">Strength</p>
+        <p class="col-2 text-center">Dexterity</p>
+        <p class="col-2 text-center">Constitution</p>
+        <p class="col-2 text-center">Intelligence</p>
+        <p class="col-2 text-center">Wisdom</p>
+        <p class="col-2 text-center">Charisma</p>
+    </div>
+    <div class="row">
+        <p class="col-2 text-center">20 (+5)</p>
+        <p class="col-2 text-center">20 (+5)</p>
+        <p class="col-2 text-center">20 (+5)</p>
+        <p class="col-2 text-center">20 (+5)</p>
+        <p class="col-2 text-center">20 (+5)</p>
+        <p class="col-2 text-center">20 (+5)</p>
+    </div>
+</div>
