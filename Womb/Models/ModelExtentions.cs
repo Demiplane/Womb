@@ -65,16 +65,16 @@ namespace Womb.Models
             {Class.Ranger,   new List<string>() {"Beastmaster", "Gloom Stalker", "Horizon Walker", "Hunter", "Monster Slayer"}},
             {Class.Rogue,    new List<string>() {"Arcane Trickster", "Assassin", "Inquisitive", "Mastermind", "Scout", "Sqashbuckler", "Theif"}},
             {Class.Sorcerer, new List<string>() {"Divine Soul", "Draconic Bloodline", "Shadow Magic", "Storm Sorcery", "Wild Magic"}},
-            {Class.Warlock,  new List<string>() {"The Archfey", "The Celestial", "The Fiend", "The Great Old One", "The Hexblade", "The Undying"}},
-            {Class.Wizard,   new List<string>() {"Bladesinging", "School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment", "School of Evocation", "Schhool of Illusion", "School of Necromancy", "Schol of Transmutation", "War Magic"}},
+            {Class.Warlock,  new List<string>() {"Pact of the Archfey", "Pact of the Celestial", "Pact of the Fiend", "Pact of the Great Old One", "Pact of the Hexblade", "Pact of the Undying"}},
+            {Class.Wizard,   new List<string>() {"Bladesinging", "School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment", "School of Evocation", "Schhool of Illusion", "School of Necromancy", "School of Transmutation", "War Magic"}},
         };
 
         private static IDictionary<Race, List<string>> SubraceDictionary = new Dictionary<Race, List<string>>()
         {
             {Race.Dragonborn,new List<string>() {"Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"} },
-            {Race.Dwarf,     new List<string>() {"Hill Dwarf", "Mountain Dwarf", "Duergar"} },
-            {Race.Elf,       new List<string>() {"High Elf", "Wood Elf", "Dark Elf"} },
-            {Race.Gnome,     new List<string>() {"Forest Gnome", "Rock Gnome"} },
+            {Race.Dwarf,     new List<string>() {"Hill", "Mountain", "Duergar"} },
+            {Race.Elf,       new List<string>() {"High", "Wood", "Dark"} },
+            {Race.Gnome,     new List<string>() {"Forest", "Rock"} },
             {Race.HalfElf,   new List<string>() {} },
             {Race.HalfOrc,   new List<string>() {} },
             {Race.Halfling,  new List<string>() {"Lightfoot", "Stout"} },

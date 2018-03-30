@@ -16,6 +16,7 @@ namespace Womb.ViewModels
             this.Class = character.Class.ToString();
             this.Subclass = character.Subclass;
             this.Background = "Lawyer";
+            this.Stats = character.Stats.Select(kvp => KeyValuePair.Create(kvp.Key, kvp.Value + " (" + kvp.Value.GetModifierForValue() + ")"));
         }
 
         public string Name
@@ -49,6 +50,12 @@ namespace Womb.ViewModels
         }
 
         public String Background
+        {
+            get;
+            set;
+        }
+
+        public IEnumerable<KeyValuePair<string, string>> Stats
         {
             get;
             set;

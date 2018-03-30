@@ -27,8 +27,8 @@ namespace Womb.Controllers
             character.Race = ModelExtentions.AllRaces.Random();
             character.Subclass = character.Class.ChooseRandomSubclass();
             character.Subrace = character.Race.ChooseRandomSubrace();
+            character.Stats = Statistics.RollAll();
 
-            //var character = new CharacterViewModel() { Name = "Kaldrod Beginnings", Class = "Ranger", Race = "Orc" };
             return View("CharacterView", new CharacterViewModel(character));
         }
 

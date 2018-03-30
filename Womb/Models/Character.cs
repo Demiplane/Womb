@@ -36,12 +36,12 @@ namespace Womb.Models
             get;
             set;
         }
-        
+
 
         public IDictionary<string, int> Stats
         {
             get;
             set;
-        } = new Dictionary<string, int>();
+        }
     }
 }

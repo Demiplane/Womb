@@ -10,46 +10,18 @@ namespace Womb
     public static class Extentions
     {
         private static Random random = new Random();
-        //public static Lazy<EnglishDictionary> Dictionary = new Lazy<EnglishDictionary>(() => new EnglishDictionary());
 
-        //public static bool IsWord(string word)
-        //{
-        //    return Dictionary.Value.Words.Contains(word.ToUpperInvariant());
-        //}
+        public static string GetModifierForValue(this int number)
+        {
+            var modifier = (int)Math.Floor((number - 10) / 2f);
 
-        //public static string RandomWord(this Random random)
-        //{
-        //    return Dictionary.Value.Words.Random(random);
-        //}
+            if (modifier > 0)
+            {
+                return $"+{modifier}";
+            }
 
-        //public class EnglishDictionary
-        //{
-        //    internal IList<string> Words
-        //    {
-        //        get;
-        //        set;
-        //    } = new List<string>();
-
-        //    internal EnglishDictionary()
-        //    {
-        //        this.Initialize();
-        //    }
-
-        //    private void Initialize()
-        //    {
-
-        //        var file = Path.Combine(Directory.GetCurrentDirectory(), "misc", "words.txt");
-        //        var fileInfo = new FileInfo(file);
-
-        //        using (var reader = fileInfo.OpenText())
-        //        {
-        //            while (!reader.EndOfStream)
-        //            {
-        //                Words.Add(reader.ReadLine().Trim().ToUpperInvariant());
-        //            }
-        //        }
-        //    }
-        //}
+            return modifier + "";
+        }
 
         public static T Random<T>(this IEnumerable<T> enumerable)
         {
