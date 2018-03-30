@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Womb.Models;
+using Womb.ViewModels;
 
 namespace Womb.Controllers
 {
@@ -12,21 +13,8 @@ namespace Womb.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            var character = new CharacterViewModel() { Name = "Kaldrod Beginnings", Class = "Ranger", Race = "Orc" };
+            return View("CharacterView", character);
         }
 
         public IActionResult Error()
