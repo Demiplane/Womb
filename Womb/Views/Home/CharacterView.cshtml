@@ -4,7 +4,7 @@
     ViewData["Title"] = "Character Creator";
 }
 <div class="container">
-    <h1 class="display-3">@Model.Name</h1>
+    <h1 class="display-4">@Model.Name</h1>
 </div>
 
 @if (String.IsNullOrWhiteSpace(Model.Subrace))
@@ -20,21 +20,18 @@ else
 
 <hr />
 
-<div class="container my-md-5 my-sm-2">
+<div class="container my-2">
     <div class="row">
         @foreach (var stat in Model.Stats)
         {
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <p class="text-center">@stat.Key</p>
-                <hr class="invisible" />
-                <p class="text-center">@stat.Value</p>
+            <div class="col-md col-sm-auto">
+                <p class="text-center">
+                    @stat.Key
+                    <br />
+                    @stat.Value
+                </p>
             </div>
+            <hr class="invisible" />
         }
     </div>
-    @*<div class="row">
-            @foreach (var stat in Model.Stats)
-            {
-                <p class="col-md-2 col-sm-4 text-center">@stat.Value</p>
-            }
-        </div>*@
 </div>
