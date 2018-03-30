@@ -17,11 +17,10 @@
 <body>
     <div class="container body-content">
         @RenderBody()
-        <footer class="card-footer">
-            <p>&copy; @Math.Max(2018, DateTime.Now.Year) - Demiplane.io</p>
-        </footer>
     </div>
-
+    <footer class="card-footer footer">
+        <p>&copy; @Math.Max(2018, DateTime.Now.Year) - Demiplane.io</p>
+    </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

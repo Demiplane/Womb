@@ -3,6 +3,18 @@
     padding-bottom: 20px;
 }
 
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

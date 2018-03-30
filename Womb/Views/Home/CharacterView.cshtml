@@ -3,19 +3,20 @@
 @{
     ViewData["Title"] = "Character Creator";
 }
-
-<h1 class="display-3">@Model.Name</h1>
+<div class="container">
+    <h1 class="display-3">@Model.Name</h1>
+</div>
 
 @if (String.IsNullOrWhiteSpace(Model.Subrace))
 {
-    <h3 class="text-primary">@Model.Race</h3>
+    <h3 class="text-primary mx-5">@Model.Race</h3>
 }
 else
 {
-    <h3 class="text-primary">@Model.Subrace @Model.Race</h3>
+    <h3 class="text-primary mx-5">@Model.Subrace @Model.Race</h3>
 }
 
-<h3 class="text-primary">@Model.Subclass @Model.Class</h3>
+<h3 class="text-primary mx-5">@Model.Subclass @Model.Class</h3>
 
 <hr />
 
@@ -23,13 +24,17 @@ else
     <div class="row">
         @foreach (var stat in Model.Stats)
         {
-            <p class="col-2 text-center">@stat.Key</p>
+            <div class="col-md-2 col-sm-4">
+                <p class="text-center">@stat.Key</p>
+                <hr class="invisible" />
+                <p class="text-center">@stat.Value</p>
+            </div>
         }
     </div>
-    <div class="row">
-        @foreach (var stat in Model.Stats)
-        {
-            <p class="col-2 text-center">@stat.Value</p>
-        }
-    </div>
+    @*<div class="row">
+            @foreach (var stat in Model.Stats)
+            {
+                <p class="col-md-2 col-sm-4 text-center">@stat.Value</p>
+            }
+        </div>*@
 </div>

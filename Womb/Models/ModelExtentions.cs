@@ -66,7 +66,7 @@ namespace Womb.Models
             {Class.Rogue,    new List<string>() {"Arcane Trickster", "Assassin", "Inquisitive", "Mastermind", "Scout", "Sqashbuckler", "Theif"}},
             {Class.Sorcerer, new List<string>() {"Divine Soul", "Draconic Bloodline", "Shadow Magic", "Storm Sorcery", "Wild Magic"}},
             {Class.Warlock,  new List<string>() {"Pact of the Archfey", "Pact of the Celestial", "Pact of the Fiend", "Pact of the Great Old One", "Pact of the Hexblade", "Pact of the Undying"}},
-            {Class.Wizard,   new List<string>() {"Bladesinging", "School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment", "School of Evocation", "Schhool of Illusion", "School of Necromancy", "School of Transmutation", "War Magic"}},
+            {Class.Wizard,   new List<string>() {"Bladesinging", "School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment", "School of Evocation", "School of Illusion", "School of Necromancy", "School of Transmutation", "War Magic"}},
         };
 
         private static IDictionary<Race, List<string>> SubraceDictionary = new Dictionary<Race, List<string>>()
