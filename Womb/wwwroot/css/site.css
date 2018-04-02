@@ -10,6 +10,10 @@
     left: 0;
 }
 
+#title-text {
+    color: black !important;
+}
+
 html {
     height: 100%;
     box-sizing: border-box;

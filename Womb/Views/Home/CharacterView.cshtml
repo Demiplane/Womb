@@ -4,7 +4,7 @@
     ViewData["Title"] = "Character Creator";
 }
 <div class="container">
-    <h1 class="display-4">@Model.Name</h1>
+    <h1 class="text-success text-sm-center text-md-left" id="title-text">@Model.Name</h1>
 </div>
 
 @if (String.IsNullOrWhiteSpace(Model.Subrace))
@@ -20,11 +20,11 @@ else
 
 <hr />
 
-<div class="container my-2">
+<div class="container-fluid my-2">
     <div class="row">
         @foreach (var stat in Model.Stats)
         {
-            <div class="col-md col-sm-auto">
+            <div class="col col-md-2">
                 <p class="text-center">
                     @stat.Key
                     <br />
