@@ -13,6 +13,12 @@ namespace Womb.Models
             set;
         }
 
+        public Background Background
+        {
+            get;
+            set;
+        }
+
         public Class Class
         {
             get;

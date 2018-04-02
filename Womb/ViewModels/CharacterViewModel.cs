@@ -15,7 +15,7 @@ namespace Womb.ViewModels
             this.Subrace = character.Subrace;
             this.Class = character.Class.ToString();
             this.Subclass = character.Subclass;
-            this.Background = "Lawyer";
+            this.Background = character.Background.Format();
             this.Stats = character.Stats.Select(kvp => KeyValuePair.Create(kvp.Key, kvp.Value + " (" + kvp.Value.GetModifierForValue() + ")"));
         }
 

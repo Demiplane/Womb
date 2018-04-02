@@ -28,6 +28,7 @@ namespace Womb.Controllers
             character.Subclass = character.Class.ChooseRandomSubclass();
             character.Subrace = character.Race.ChooseRandomSubrace();
             character.Stats = Statistics.RollAll();
+            character.Background = ModelExtentions.AllBackgrounds.Random();
 
             return View("CharacterView", new CharacterViewModel(character));
         }

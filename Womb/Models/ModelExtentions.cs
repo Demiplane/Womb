@@ -7,6 +7,44 @@ namespace Womb.Models
 {
     public static class ModelExtentions
     {
+        public static List<Background> AllBackgrounds = new List<Background>()
+        {
+            Background.Acolyte,
+            Background.Anthropologist,
+            Background.Archeologist,
+            Background.Charlatan,
+            Background.CityWatch,
+            Background.ClanCrafter,
+            Background.CloisteredScholor,
+            Background.Courtier,
+            Background.Criminal,
+            Background.Entertainer,
+            Background.FactionAgent,
+            Background.FarTraveler,
+            Background.FolkHero,
+            Background.Gladiator,
+            Background.GuildArtisan,
+            Background.GuildMerchant,
+            Background.HauntedOne,
+            Background.Hermit,
+            Background.Inheritor,
+            Background.Investigator,
+            Background.Knight,
+            Background.KnightOrder,
+            Background.MerceneryVeteran,
+            Background.Noble,
+            Background.Outlander,
+            Background.Pirate,
+            Background.Sage,
+            Background.Sailor,
+            Background.Soldier,
+            Background.Spy,
+            Background.UrbanBountyHunter,
+            Background.Urchin,
+            Background.UthgardtTribeMember,
+            Background.WaterdhavianNoble,
+        };
+
         public static List<Race> AllRaces = new List<Race>()
         {
             Race.Dragonborn,
@@ -51,6 +89,24 @@ namespace Womb.Models
         {
             { Race.HalfElf, "Half-Elf" },
             { Race.HalfOrc, "Half-Orc" },
+        };
+
+        private static IDictionary<Background, string> BackgroundFormatMap = new Dictionary<Background, string>
+        {
+            { Background.CityWatch, "City Watch"},
+            { Background.ClanCrafter, "Clan Crafter"},
+            { Background.CloisteredScholor, "Cloistered Scholor"},
+            { Background.FactionAgent, "Faction Agent"},
+            { Background.FarTraveler, "Far Traveler"},
+            { Background.FolkHero, "Folk Hero"},
+            { Background.GuildArtisan, "Guild Artisan"},
+            { Background.GuildMerchant, "Guild Merchant"},
+            { Background.HauntedOne, "Haunted One"},
+            { Background.KnightOrder, "Knight of the Order"},
+            { Background.MerceneryVeteran, "Mercenary Veteran"},
+            { Background.UrbanBountyHunter, "Urban Bounty Hunter"},
+            { Background.UthgardtTribeMember, "Uthgardt Tribe Member"},
+            { Background.WaterdhavianNoble, "Waterdhavian Noble"},
         };
 
         private static IDictionary<Class, List<string>> SubclassDictionary = new Dictionary<Class, List<string>>()
@@ -117,6 +173,18 @@ namespace Womb.Models
             }
         }
 
+
+        public static string Format(this Background background)
+        {
+            if (BackgroundFormatMap.ContainsKey(background))
+            {
+                return BackgroundFormatMap[background];
+            }
+            else
+            {
+                return background.ToString();
+            }
+        }
 
         public static string Format(this Race race)
         {

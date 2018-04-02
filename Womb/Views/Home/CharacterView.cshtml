@@ -9,11 +9,11 @@
 
 @if (String.IsNullOrWhiteSpace(Model.Subrace))
 {
-    <h3 class="text-primary mx-5">@Model.Race</h3>
+    <h3 class="text-primary mx-5">@Model.Race @Model.Background</h3>
 }
 else
 {
-    <h3 class="text-primary mx-5">@Model.Subrace @Model.Race</h3>
+    <h3 class="text-primary mx-5">@Model.Subrace @Model.Race @Model.Background</h3>
 }
 
 <h3 class="text-primary mx-5">@Model.Subclass @Model.Class</h3>
