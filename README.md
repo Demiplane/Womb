@@ -1,6 +1,19 @@
 # Womb
 
-Womb gives birth to randomly generated characters and NPCs designed specifically for Dungeons and Dragons, fifth edition.
+Have you ever been lacking inspiration for a new DnD character? Ever needed to create an interesting NPC on the fly? Perhaps you just wanted to roll some random stats or create a wonderous new character name. Womb can help!
+
+Womb is a tool in the Demiplane suite capable of randomly generating fully playable characters and NPCs. Womb has a unique algorithm for naming characters that you are sure not to run into anywhere else. 
+
+Womb randomly generates a character with the following
+* Name
+* Race
+* Subrace (If possible)
+* Class
+* Subclass
+* Background
+* Standard Stats (STR, DEX, CON, INT, WIS, CHA)
+
+Simply refresh the page or click the refresh button to get a new character!
 
 ## Notes
 
