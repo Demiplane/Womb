@@ -27,6 +27,11 @@ namespace Womb
             services.AddMvc();
             services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
             services.AddSingleton<IWordResolver, RandomWordResolver>();
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            services.AddTransient<IConnectionStringResolver, ConfigurationConnectionStringResolver>();
+            services.AddTransient<ICreationCountRepository, SqlCreationCountRepository>();
+            services.AddTransient<ICharacterCreationCountResolver, SqlCharacterCreationCountResolver>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

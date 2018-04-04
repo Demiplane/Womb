@@ -13,13 +13,15 @@ namespace Womb.Controllers
     public class HomeController : Controller
     {
         private IWordResolver wordResolver;
+        private ICreationCountRepository creationCountRepository;
 
-        public HomeController(IWordResolver wordResolver)
+        public HomeController(IWordResolver wordResolver, ICreationCountRepository creationCountRepository)
         {
             this.wordResolver = wordResolver;
+            this.creationCountRepository = creationCountRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var character = new Character();
             character.Name = wordResolver.ResolveWord() + " " + wordResolver.ResolveWord();
@@ -30,7 +32,11 @@ namespace Womb.Controllers
             character.Stats = Statistics.RollAll();
             character.Background = ModelExtentions.AllBackgrounds.Random();
 
-            return View("CharacterView", new CharacterViewModel(character));
+            var characterCreationCount = await this.creationCountRepository.UpdateCreationCount();
+
+            var characterCreation = new CharacterCreationViewModel() { CharacterViewModel = new CharacterViewModel(character), CharacterCreationCount = characterCreationCount };
+
+            return View("CharacterCreationView", characterCreation);
         }
 
         public IActionResult Error()
