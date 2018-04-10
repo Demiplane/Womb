@@ -1,9 +1,0 @@
-﻿@model CharacterCreationViewModel
-
-@{
-    ViewData["Title"] = "Character Creator";
-}
-
-<p class="text-info text-right">Total Characters Created: @Model.CharacterCreationCount</p>
-
-@await Html.PartialAsync("CharacterPartial", @Model.CharacterViewModel)

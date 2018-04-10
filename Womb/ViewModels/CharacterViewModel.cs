@@ -8,8 +8,15 @@ namespace Womb.ViewModels
 {
     public class CharacterViewModel
     {
+        public Character Character
+        {
+            get;
+            set;
+        }
+
         public CharacterViewModel(Character character)
         {
+            this.Character = character;
             this.Name = character.Name;
             this.Race = character.Race.Format();
             this.Subrace = character.Subrace;
