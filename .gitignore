@@ -286,4 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-Womb/appsettings.Development.json
+
+# Personal Preference Ignores
+*.Development.json
