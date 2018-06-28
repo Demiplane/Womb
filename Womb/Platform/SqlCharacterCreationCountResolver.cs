@@ -33,7 +33,7 @@ namespace Womb.Platform
                     {
                         while (await reader.ReadAsync())
                         {
-                            characterCreationCount = reader.GetInt32(reader.GetOrdinal("CreatedCount"));
+                            characterCreationCount = reader.GetInt32(reader.GetOrdinal("CreationCount"));
                         }
                     }
                 }

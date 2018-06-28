@@ -26,17 +26,15 @@ namespace Womb.Platform
             {
                 await connection.OpenAsync();
 
-                using (var command = new SqlCommand("Creation.UpdateAndSelectCharacterCreationCount", connection))
+                using (var command = new SqlCommand("Creation.GetCharacterCreationCount", connection))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-
-                    command.Parameters.AddWithValue("@CreationDate", DateTime.UtcNow);
 
                     using (var reader = await command.ExecuteReaderAsync())
                     {
                         while (await reader.ReadAsync())
                         {
-                            characterCreationCount = reader.GetInt32(reader.GetOrdinal("CreatedCount"));
+                            characterCreationCount = reader.GetInt32(reader.GetOrdinal("CreationCount"));
                         }
                     }
                 }
