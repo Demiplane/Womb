@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Womb.Platform
+namespace Womb.WordResolver
 {
     public class RandomWordResolver : IWordResolver
     {
@@ -20,17 +20,17 @@ namespace Womb.Platform
             this.fileProvider = fileProvider;
         }
 
-        public string ResolveWord()
+        public async Task<string> ResolveWord()
         {
             if (words.Count() == 0)
             {
-                FillWordsFromFile();
+                await FillWordsFromFile();
             }
 
             return words.Random();
         }
 
-        private void FillWordsFromFile()
+        private async Task FillWordsFromFile()
         {
             var fileInfo = this.fileProvider.GetFileInfo("wwwroot/misc/words.txt");
 
@@ -39,7 +39,7 @@ namespace Womb.Platform
             {
                 while (!reader.EndOfStream)
                 {
-                    words.Add(reader.ReadLine().Trim().ToUpperInvariant());
+                    words.Add((await reader.ReadLineAsync()).Trim().ToUpperInvariant());
                 }
             }
         }

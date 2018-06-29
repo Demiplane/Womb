@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using Womb.NameGeneration;
 using Womb.Platform;
+using Womb.WordResolver;
 
 namespace Womb
 {
@@ -26,9 +28,10 @@ namespace Womb
         {
             services.AddMvc();
             services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
-            services.AddSingleton<IWordResolver, RandomWordResolver>();
+            services.AddSingleton<IWordResolver, NonCommonWordResolver>();
             services.AddSingleton<IConfiguration>(Configuration);
 
+            services.AddTransient<INameGenerator, DualWordNameGenerator>();
             services.AddTransient<IConnectionStringResolver, ConfigurationConnectionStringResolver>();
             services.AddTransient<ICreationCountRepository, SqlCreationCountRepository>();
             services.AddTransient<ICharacterCreationCountResolver, SqlCharacterCreationCountResolver>();

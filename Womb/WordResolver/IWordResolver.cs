@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Womb.Platform
+namespace Womb.WordResolver
 {
     public interface IWordResolver
     {
-        string ResolveWord();
+        Task<string> ResolveWord();
     }
 }

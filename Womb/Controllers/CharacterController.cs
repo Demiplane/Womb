@@ -5,20 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Womb.Models;
+using Womb.NameGeneration;
 using Womb.Platform;
 using Womb.ViewModels;
+using Womb.WordResolver;
 
 namespace Womb.Controllers
 {
     public class CharacterController : Controller
     {
-        private IWordResolver wordResolver;
+        private INameGenerator nameGenerator;
         private ICreationCountRepository creationCountRepository;
         private ICharacterSaver characterSaver;
 
-        public CharacterController(IWordResolver wordResolver, ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
+        public CharacterController(INameGenerator nameGenerator, ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
         {
-            this.wordResolver = wordResolver;
+            this.nameGenerator = nameGenerator;
             this.creationCountRepository = creationCountRepository;
             this.characterSaver = characterSaver;
         }
@@ -26,7 +28,7 @@ namespace Womb.Controllers
         public async Task<IActionResult> Birth()
         {
             var character = new Character();
-            character.Name = wordResolver.ResolveWord() + " " + wordResolver.ResolveWord();
+            character.Name = await this.nameGenerator.GenerateName(NameGenerationOptions.None);
             character.Class = ModelExtentions.AllClasses.Random();
             character.Race = ModelExtentions.AllRaces.Random();
             character.Subclass = character.Class.ChooseRandomSubclass();
@@ -44,25 +46,6 @@ namespace Womb.Controllers
         public async Task<IActionResult> SavedCharacters()
         {
             await Task.Delay(0);
-            return Ok();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Save(Character character)
-        {
-            if (String.IsNullOrWhiteSpace(character.Name))
-            {
-                character = new Character();
-                character.Name = wordResolver.ResolveWord() + " " + wordResolver.ResolveWord();
-                character.Class = ModelExtentions.AllClasses.Random();
-                character.Race = ModelExtentions.AllRaces.Random();
-                character.Subclass = character.Class.ChooseRandomSubclass();
-                character.Subrace = character.Race.ChooseRandomSubrace();
-                character.Stats = Statistics.RollAll();
-                character.Background = ModelExtentions.AllBackgrounds.Random();
-            }
-
-            await this.characterSaver.Save(character, Guid.Empty);
             return Ok();
         }
 
