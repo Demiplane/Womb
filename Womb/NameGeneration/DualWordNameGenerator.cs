@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Womb.Models.Names;
 using Womb.Platform;
 using Womb.WordResolver;
 
@@ -16,9 +17,9 @@ namespace Womb.NameGeneration
             this.wordResolver = wordResolver;
         }
 
-        public async Task<string> GenerateName(NameGenerationOptions options)
+        public async Task<Name> GenerateName(NameGenerationOptions options)
         {
-            return (await this.wordResolver.ResolveWord()) + " " + (await this.wordResolver.ResolveWord());
+            return new TwoPartName() { FirstName = await this.wordResolver.ResolveWord(), LastName = await this.wordResolver.ResolveWord() };
         }
     }
 }

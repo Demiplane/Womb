@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Womb.Models;
+using Womb.Models.Names;
 
 namespace Womb.ViewModels
 {
@@ -17,7 +18,7 @@ namespace Womb.ViewModels
         public CharacterViewModel(Character character)
         {
             this.Character = character;
-            this.Name = character.Name;
+            this.Name = character.Name.Format();
             this.Race = character.Race.Format();
             this.Subrace = character.Subrace;
             this.Class = character.Class.ToString();
