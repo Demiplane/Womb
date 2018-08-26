@@ -89,6 +89,7 @@ namespace Womb.Models
         {
             { RaceName.HalfElf, "Half-Elf" },
             { RaceName.HalfOrc, "Half-Orc" },
+            { RaceName.YuanTi, "Yuan-Ti" },
         };
 
         private static IDictionary<Background, string> BackgroundFormatMap = new Dictionary<Background, string>
