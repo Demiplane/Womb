@@ -19,7 +19,7 @@ namespace Womb.ViewModels
         {
             this.Character = character;
             this.Name = character.Name.Format();
-            this.Race = character.Race.Format();
+            this.Race = character.Race.Name.Format();
             this.Subrace = character.Subrace;
             this.Class = character.Class.ToString();
             this.Subclass = character.Subclass;

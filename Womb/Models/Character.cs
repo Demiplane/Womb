@@ -26,7 +26,7 @@ namespace Womb.Models
             set;
         }
 
-        public Race Race
+        public Race Race 
         {
             get;
             set;

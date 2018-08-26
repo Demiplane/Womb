@@ -30,11 +30,19 @@ namespace Womb.Controllers
             var character = new Character();
             character.Name = await this.nameGenerator.GenerateName(NameGenerationOptions.None);
             character.Class = ModelExtentions.AllClasses.Random();
-            character.Race = ModelExtentions.AllRaces.Random();
+            character.Race = Race.StandardRaces().Random();
             character.Subclass = character.Class.ChooseRandomSubclass();
-            character.Subrace = character.Race.ChooseRandomSubrace();
+            character.Subrace = character.Race.Name.ChooseRandomSubrace();
             character.Stats = Statistics.RollAll();
             character.Background = ModelExtentions.AllBackgrounds.Random();
+
+            foreach (var modifier in character.Race.Modifiers)
+            {
+                if (character.Stats.ContainsKey(modifier.Key))
+                {
+                    character.Stats[modifier.Key] += modifier.Value;
+                }
+            }
 
             var characterCreationCount = await this.creationCountRepository.UpdateCreationCount();
 

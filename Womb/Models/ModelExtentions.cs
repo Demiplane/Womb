@@ -45,28 +45,28 @@ namespace Womb.Models
             Background.WaterdhavianNoble,
         };
 
-        public static List<Race> AllRaces = new List<Race>()
+        public static List<RaceName> AllRaces = new List<RaceName>()
         {
-            Race.Dragonborn,
-            Race.Dwarf,
-            Race.Elf,
-            Race.Gnome,
-            Race.HalfElf,
-            Race.HalfOrc,
-            Race.Halfling,
-            Race.Human,
-            Race.Tiefling,
-            Race.Aasimar,
-            Race.Bugbear,
-            Race.Firbolg,
-            Race.Goblin,
-            Race.Hobgoblin,
-            Race.Kenku,
-            Race.Kobold,
-            Race.Lizardfolk,
-            Race.Orc,
-            Race.Tabaxi,
-            Race.Triton
+            RaceName.Dragonborn,
+            RaceName.Dwarf,
+            RaceName.Elf,
+            RaceName.Gnome,
+            RaceName.HalfElf,
+            RaceName.HalfOrc,
+            RaceName.Halfling,
+            RaceName.Human,
+            RaceName.Tiefling,
+            RaceName.Aasimar,
+            RaceName.Bugbear,
+            RaceName.Firbolg,
+            RaceName.Goblin,
+            RaceName.Hobgoblin,
+            RaceName.Kenku,
+            RaceName.Kobold,
+            RaceName.Lizardfolk,
+            RaceName.Orc,
+            RaceName.Tabaxi,
+            RaceName.Triton
         };
 
         public static List<Class> AllClasses = new List<Class>()
@@ -85,10 +85,10 @@ namespace Womb.Models
             Class.Wizard,
         };
 
-        private static IDictionary<Race, string> RaceFormatMap = new Dictionary<Race, string>
+        private static IDictionary<RaceName, string> RaceFormatMap = new Dictionary<RaceName, string>
         {
-            { Race.HalfElf, "Half-Elf" },
-            { Race.HalfOrc, "Half-Orc" },
+            { RaceName.HalfElf, "Half-Elf" },
+            { RaceName.HalfOrc, "Half-Orc" },
         };
 
         private static IDictionary<Background, string> BackgroundFormatMap = new Dictionary<Background, string>
@@ -125,28 +125,28 @@ namespace Womb.Models
             {Class.Wizard,   new List<string>() {"Bladesinging", "School of Abjuration", "School of Conjuration", "School of Divination", "School of Enchantment", "School of Evocation", "School of Illusion", "School of Necromancy", "School of Transmutation", "War Magic"}},
         };
 
-        private static IDictionary<Race, List<string>> SubraceDictionary = new Dictionary<Race, List<string>>()
+        private static IDictionary<RaceName, List<string>> SubraceDictionary = new Dictionary<RaceName, List<string>>()
         {
-            {Race.Dragonborn,new List<string>() {"Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"} },
-            {Race.Dwarf,     new List<string>() {"Hill", "Mountain", "Duergar"} },
-            {Race.Elf,       new List<string>() {"High", "Wood", "Dark"} },
-            {Race.Gnome,     new List<string>() {"Forest", "Rock"} },
-            {Race.HalfElf,   new List<string>() {} },
-            {Race.HalfOrc,   new List<string>() {} },
-            {Race.Halfling,  new List<string>() {"Lightfoot", "Stout"} },
-            {Race.Human,     new List<string>() {} },
-            {Race.Tiefling,  new List<string>() {} },
-            {Race.Aasimar,   new List<string>() {} },
-            {Race.Bugbear,   new List<string>() {} },
-            {Race.Firbolg,   new List<string>() {} },
-            {Race.Goblin,    new List<string>() {} },
-            {Race.Hobgoblin, new List<string>() {} },
-            {Race.Kenku,     new List<string>() {} },
-            {Race.Kobold,    new List<string>() {} },
-            {Race.Lizardfolk,new List<string>() {} },
-            {Race.Orc,       new List<string>() {} },
-            {Race.Tabaxi,    new List<string>() {} },
-            {Race.Triton,    new List<string>() {} },
+            {RaceName.Dragonborn,new List<string>() {"Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"} },
+            {RaceName.Dwarf,     new List<string>() {"Hill", "Mountain", "Duergar"} },
+            {RaceName.Elf,       new List<string>() {"High", "Wood", "Dark"} },
+            {RaceName.Gnome,     new List<string>() {"Forest", "Rock"} },
+            {RaceName.HalfElf,   new List<string>() {} },
+            {RaceName.HalfOrc,   new List<string>() {} },
+            {RaceName.Halfling,  new List<string>() {"Lightfoot", "Stout"} },
+            {RaceName.Human,     new List<string>() {} },
+            {RaceName.Tiefling,  new List<string>() {} },
+            {RaceName.Aasimar,   new List<string>() {} },
+            {RaceName.Bugbear,   new List<string>() {} },
+            {RaceName.Firbolg,   new List<string>() {} },
+            {RaceName.Goblin,    new List<string>() {} },
+            {RaceName.Hobgoblin, new List<string>() {} },
+            {RaceName.Kenku,     new List<string>() {} },
+            {RaceName.Kobold,    new List<string>() {} },
+            {RaceName.Lizardfolk,new List<string>() {} },
+            {RaceName.Orc,       new List<string>() {} },
+            {RaceName.Tabaxi,    new List<string>() {} },
+            {RaceName.Triton,    new List<string>() {} },
         };
 
         public static string ChooseRandomSubclass(this Class @class)
@@ -161,7 +161,7 @@ namespace Womb.Models
             }
         }
 
-        public static string ChooseRandomSubrace(this Race race)
+        public static string ChooseRandomSubrace(this RaceName race)
         {
             if (SubraceDictionary.ContainsKey(race))
             {
@@ -186,7 +186,7 @@ namespace Womb.Models
             }
         }
 
-        public static string Format(this Race race)
+        public static string Format(this RaceName race)
         {
             if (RaceFormatMap.ContainsKey(race))
             {
