@@ -36,6 +36,7 @@ namespace Womb.Controllers
             character.Stats = Statistics.RollAll();
             character.Background = ModelExtentions.AllBackgrounds.Random();
 
+            // Racial Modifiers
             foreach (var modifier in character.Race.Modifiers)
             {
                 if (character.Stats.ContainsKey(modifier.Key))

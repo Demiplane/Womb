@@ -9,6 +9,7 @@ namespace Womb.Models
 
     public enum RaceName
     {
+        Goliath,
         Aarakocra,
         Dragonborn,
         Dwarf,
@@ -29,6 +30,7 @@ namespace Womb.Models
         Lizardfolk,
         Orc,
         Tabaxi,
-        Triton
+        Triton,
+        YuanTi
     }
 }
