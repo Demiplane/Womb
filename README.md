@@ -17,8 +17,8 @@ Simply refresh the page or click the refresh button to get a new character!
 
 ## Notes
 
+* Racial Stat bonuses are now included, and randomly picked when necessary.
 * Names are intended to be bizzare and nonsensical
-* Racial bonuses are not included in rolled stats for copyright reasons
 * Each stat is rolled individually and no consideration is put into what stats are best for the character
 * Each created character is completely ephemeral, if you want to save it, it up to you how to decide how to do so 
 * Each race/class/background has an equal chance of getting picked, which may lead to you getting a monsterous/exotic race more often than not simply because there are more of them
