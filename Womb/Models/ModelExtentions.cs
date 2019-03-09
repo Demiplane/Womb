@@ -174,7 +174,6 @@ namespace Womb.Models
             }
         }
 
-
         public static string Format(this Background background)
         {
             if (BackgroundFormatMap.ContainsKey(background))
