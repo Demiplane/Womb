@@ -1,29 +1,35 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html {
+    height: 100%;
+    margin: 0;
+
 }
 
-.footer {
-    position: absolute;
+body {
+    
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: -50px;
+}
+
+.footer, .push {
     right: 0;
     bottom: 0;
     left: 0;
+    height: 50px;
 }
 
 #title-text {
     color: black !important;
-}
-
-html {
-    height: 100%;
-    box-sizing: border-box;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 /* Carousel */
