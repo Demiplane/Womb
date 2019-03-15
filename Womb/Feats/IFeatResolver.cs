@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Womb.Models.Feats
+namespace Womb.Feats
 {
     public class IFeatCollectionResolver
     {
