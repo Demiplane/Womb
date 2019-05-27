@@ -14,6 +14,7 @@ using Microsoft.Extensions.FileProviders;
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using SimpleInjector.Lifestyles;
+using Womb.Feats;
 using Womb.NameGeneration;
 using Womb.Platform;
 using Womb.WordResolver;
@@ -94,6 +95,7 @@ namespace Womb
             container.Register<ICreationCountRepository, SqlCreationCountRepository>();
             container.Register<ICharacterCreationCountResolver, SqlCharacterCreationCountResolver>();
             container.Register<ICharacterSaver, SqlCharacterSaver>();
+            container.Register<IFeatResolver, HardCodedFeatResolver>();
 
             // Allow Simple Injector to resolve services from ASP.NET Core.
             container.AutoCrossWireAspNetComponents(app);

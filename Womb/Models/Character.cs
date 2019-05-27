@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Womb.Feats;
 using Womb.Models.Names;
 
 namespace Womb.Models
@@ -9,6 +10,12 @@ namespace Womb.Models
     public class Character
     {
         public Name Name
+        {
+            get;
+            set;
+        }
+
+        public IEnumerable<Feat> Feats
         {
             get;
             set;

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Womb.Feats;
 using Womb.Models;
 using Womb.NameGeneration;
 using Womb.Platform;
@@ -17,8 +18,9 @@ namespace Womb.Controllers
         private INameGenerator nameGenerator;
         private ICreationCountRepository creationCountRepository;
         private ICharacterSaver characterSaver;
+        private IFeatResolver featResolver;
 
-        public CharacterController(INameGenerator nameGenerator, ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
+        public CharacterController(INameGenerator nameGenerator, IFeatResolver featResolver, `ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
         {
             this.nameGenerator = nameGenerator;
             this.creationCountRepository = creationCountRepository;
@@ -35,6 +37,7 @@ namespace Womb.Controllers
             character.Subrace = character.Race.Name.ChooseRandomSubrace();
             character.Stats = Statistics.RollAll();
             character.Background = ModelExtentions.AllBackgrounds.Random();
+            character.Feats = new List<Feat>() { this.featResolver.ResolveFeats().Random() }; 
 
             // Racial Modifiers
             foreach (var modifier in character.Race.Modifiers)
