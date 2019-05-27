@@ -20,7 +20,7 @@ namespace Womb.Controllers
         private ICharacterSaver characterSaver;
         private IFeatResolver featResolver;
 
-        public CharacterController(INameGenerator nameGenerator, IFeatResolver featResolver, `ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
+        public CharacterController(INameGenerator nameGenerator, IFeatResolver featResolver, ICreationCountRepository creationCountRepository, ICharacterSaver characterSaver)
         {
             this.nameGenerator = nameGenerator;
             this.creationCountRepository = creationCountRepository;
